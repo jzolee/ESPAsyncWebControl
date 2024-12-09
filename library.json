@@ -1,0 +1,24 @@
+{
+  "name": "ESPAsyncWebControl",
+  "keywords": "iot, home, automation, async, ota, dashboard, config, update, firmware, esp8266, esp32",
+  "description": "Simple web based dashboard, configuration page, and firmware updater for ESP32 and ESP8266",
+  "authors":
+  {
+    "name": "jzolee"
+  },
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/jzolee/ESPAsyncWebControl.git"
+  },
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": ["espressif8266", "espressif32"],
+  "dependencies": [
+    {
+      "name": "ESPAsyncWebServer",
+      "version": "^1.2.4",
+      "platforms": ["espressif8266", "espressif32"]
+    }
+  ]
+}
