@@ -4,7 +4,8 @@
   "description": "Simple web based dashboard, configuration page, and firmware updater for ESP32 and ESP8266",
   "authors":
   {
-    "name": "jzolee"
+    "name": "jzolee",
+    "maintainer": true
   },
   "repository":
   {
@@ -16,6 +17,7 @@
   "platforms": ["espressif8266", "espressif32"],
   "dependencies": [
     {
+      "owner": "me-no-dev",
       "name": "ESP Async WebServer",
       "version": "^1.2.4",
       "platforms": ["espressif8266", "espressif32"]
