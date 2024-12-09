@@ -14,7 +14,7 @@
 
 #include "control.min.html.gz.h"
 
-class AsyncWebUpdater {
+class AsyncWebUpdate {
 
 public:
     void begin(AsyncWebServer* server, const char* url = "/update", const char* username = "", const char* password = "")
