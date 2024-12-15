@@ -16,7 +16,7 @@
 #include "str_split.h"
 #include "control.min.html.gz.h"
 
-using AsyncWebControlHandler = void(*)(String);
+using AsyncWebControlHandler = std::function<void(const String&)>;
 
 class AsyncWebControl {
     enum Type {
