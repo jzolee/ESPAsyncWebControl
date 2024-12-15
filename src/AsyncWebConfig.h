@@ -17,7 +17,7 @@
 #include "str_split.h"
 #include "control.min.html.gz.h"
 
-using AsyncWebConfigCmdHandler = void(*)(String);
+using AsyncWebConfigCmdHandler = std::function<void(const String&)>;
 using AsyncWebConfigCfg = std::map<String, String>;
 
 class AsyncWebConfig {
