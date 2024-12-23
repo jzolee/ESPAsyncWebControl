@@ -35,7 +35,8 @@ bool config_load()
             while (file.available()) {
                 String name = file.readStringUntil('=');
                 String value = file.readStringUntil('\n');
-                config.insert_or_assign(name, value);
+                //config.insert_or_assign(name, value);
+                config[name] = value;
             }
             file.close();
         }
