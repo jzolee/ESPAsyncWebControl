@@ -2,15 +2,17 @@
 #pragma once
 
 #include <Arduino.h>
-#include <Updater.h>
 
 #if defined(ESP32)
-#include <AsyncTCP.h>
-#include <WiFi.h>
+    #include <WiFi.h>
+    #include <AsyncTCP.h>
+    #include <Update.h>
 #elif defined(ESP8266)
-#include <ESP8266WiFi.h>
-#include <ESPAsyncTCP.h>
+    #include <ESP8266WiFi.h>
+    #include <ESPAsyncTCP.h>
+    #include <Updater.h>
 #endif
+
 #include <ESPAsyncWebServer.h>
 
 #include "control.min.html.gz.h"
