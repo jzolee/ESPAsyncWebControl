@@ -62,7 +62,7 @@ void AsyncWebConfig::_handle_config_message(void* arg, uint8_t* data, size_t len
                         //_config->insert_or_assign(m[0], m[1]);
                         (*_config)[m[0]] = m[1];
                         client->text("msg#Done\n");
-                        _send_value(m[2], m[3]);
+                        _send_value(m[0], m[1]);
                     } else {
                         _config->erase(m[0]);
                         msg("'" + m[0] + "' delete from config");
