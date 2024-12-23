@@ -47,7 +47,8 @@ void AsyncWebConfig::_handle_config_message(void* arg, uint8_t* data, size_t len
         if (m.size() > 1) {
             if (m[0] == "CMD") {
                 if (m[1] == "cfg" && m.size() == 4) {
-                    _config->insert_or_assign(m[2], m[3]);
+                    //_config->insert_or_assign(m[2], m[3]);
+                    (*_config)[m[2]] = m[3];
                     client->text("msg#Done\n");
                     _send_value(m[2], m[3]);
                 } else {
@@ -58,7 +59,8 @@ void AsyncWebConfig::_handle_config_message(void* arg, uint8_t* data, size_t len
             } else {
                 if (m.size() == 2 && (_config->find(m[0]) != _config->end())) {
                     if (m[1].length() > 0) {
-                        _config->insert_or_assign(m[0], m[1]);
+                        //_config->insert_or_assign(m[0], m[1]);
+                        (*_config)[m[0]] = m[1];
                         client->text("msg#Done\n");
                         _send_value(m[2], m[3]);
                     } else {
