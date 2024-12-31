@@ -14,7 +14,7 @@ void AsyncWebControl::begin(AsyncWebServer* server, const char* url, const char*
         if (_authRequired)
             if (!request->authenticate(_username.c_str(), _password.c_str()))
                 return request->requestAuthentication();
-        AsyncWebServerResponse* response = request->beginResponse_P(200, "text/html", control_min_html_gz, sizeof(control_min_html_gz));
+        AsyncWebServerResponse* response = request->beginResponse_P(200, "text/html", control_min_html_gz, control_min_html_gz_len);
         response->addHeader("Content-Encoding", "gzip");
         request->send(response);
         });
