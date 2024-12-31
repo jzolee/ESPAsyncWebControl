@@ -1,6 +1,4 @@
-#pragma once
-
-#include <Arduino.h>
+#include <control.min.html.gz.h>
 
 //File: control.min.html.gz, Size: 1257
 #define control_min_html_gz_len 1257
