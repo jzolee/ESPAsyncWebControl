@@ -24,13 +24,13 @@ class AsyncWebConfig {
 public:
     void begin(AsyncWebConfigCfg* config, AsyncWebServer* server, const char* url = "/config", const char* username = "", const char* password = "");
     void onCmd(AsyncWebConfigCmdHandler cb) { _cmd_cb = cb; }
-    void msg(const char* message) { _socket->printfAll("msg#%s\n", message); }
+    void msg(const char* message) { _socket->printfAll("msg#%s", message); }
     void msg(const String& message) { msg(message.c_str()); }
 
 private:
     void _handle_config_message(void* arg, uint8_t* data, size_t len, AsyncWebSocketClient* client);
     void _send_config_elements(AsyncWebSocketClient* client);
-    void _send_value(String& id, String& value) { _socket->printfAll("value#%s#%s\n", id.c_str(), value.c_str()); }
+    void _send_value(String& id, String& value) { _socket->printfAll("value#%s#%s", id.c_str(), value.c_str()); }
 
     AsyncWebServer* _server;
     AsyncWebSocket* _socket;
