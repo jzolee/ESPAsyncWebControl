@@ -101,6 +101,6 @@ void AsyncWebControl::_send_control_elements(AsyncWebSocketClient* client) {
 void AsyncWebControl::_send_value(const char* id, const char* value)
 {
     char buf[128];
-    int len = snprintf(buf, sizeof(buf), "value#%s#%s\n", id, value);
+    int len = snprintf(buf, sizeof(buf), "value#%s#%s", id, value);
     _socket->textAll(buf, len);
 }
