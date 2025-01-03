@@ -42,6 +42,8 @@ bool config_load()
         }
         LittleFS.end();
         return true;
+    } else {
+        LittleFS.format();
     }
     return false;
 }
@@ -83,16 +85,19 @@ void config_cmd_handler(const String str)
     } else if (str == "restart") {
         ESP.restart();
     } else if (str == "help") {
-        String str = "available commands:<br>";
-        str += "help -> this message<br>";
-        str += "save -> save config to filesystem<br>";
-        str += "delete -> delete config from filesystem<br>";
-        str += "restart -> restart the chip<br>";
-        str += "cfg#NewConfig#Value -> create 'NewConfig' with 'Value'<br>";
-        str += "others:<br>";
-        str += "empty existing config value -> that configuration is deleted<br>";
-        str += "!! don't use '#' in config value !!<br>";
-        webConfig.msg(str);
+        webconfig.msg(F(
+            "\navailable commands:\n"
+            "   help -> this message\n"
+            "   save -> save config to filesystem\n"
+            "   delete -> delete config from filesystem\n"
+            "   restart -> restart the chip\n"
+            "   cfg#NewConfig#Value -> create 'NewConfig' with 'Value'\n"
+            "others:\n"
+            "   empty existing config value -> that configuration is deleted\n"
+            "   !! don't use # in config value !!\n"
+            ));
+    } else {
+        webconfig.msg("unknown command: " + str);
     }
 }
 
