@@ -36,7 +36,7 @@ public:
     void set(const char* id, const char* value);
     void set(const char* id, const String& value) { set(id, value.c_str()); }
     String get(const char* id);
-    void msg(const char* message) { _socket->printfAll("msg#%s\n", message); }
+    void msg(const char* message) { _socket->printfAll("msg#%s", message); }
     void msg(const String& message) { msg(message.c_str()); }
 
 private:
