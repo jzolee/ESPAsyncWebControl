@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-#include <map>
+#include <unordered_map>
 #include <vector>
 
 #if defined(ESP32)
@@ -18,7 +18,7 @@
 #include "control.min.html.gz.h"
 
 using AsyncWebConfigCmdHandler = std::function<void(const String&)>;
-using AsyncWebConfigCfg = std::map<String, String>;
+using AsyncWebConfigCfg = std::unordered_map<String, String>;
 
 class AsyncWebConfig {
 public:
